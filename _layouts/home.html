@@ -2,33 +2,103 @@
 layout: default
 ---
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+<div class="info-box info-box--intro">
+    {% include logo.html %}
+    <div class="one-whole m-two-thirds">
+        <div class="info-box__announce">
+            <p>The web is an amazing place, but there’s so much more to it than browsing Facebook and watching funny cat videos on YouTube.</p>
 
-  {{ content }}
-
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- endif -%}
-
+            <p>You could be <em>making</em> the web.</p>
+        </div>
+        <!-- /.info-box__announce -->
+        <div class="info-box__cta">
+            <div class="media">
+                <div class="media__img">
+                    <div class="cta-info">
+                        <p><a href="#" class="btn btn--alt">(re)start your career</a></p>
+                    </div>
+                    <!-- /.cta-info -->
+                </div>
+                <!-- /.media__img -->
+                <div class="media__body">
+                    <div class="cta-info">
+                        <p>14 week course</p>
+                        <p>Starts August 6<sup>th</sup> 2018</p>
+                    </div>
+                </div>
+                <!-- /.media__body -->
+            </div>
+            <!-- /.media -->
+        </div>
+        <!-- /.info-box__cta -->
+    </div>
+    <!-- /.g one-whole m-one-half -->
 </div>
+<!-- /.info-box info-box--intro -->
+
+<div class="info-box info-box--why">
+    <div class="one-whole m-one-half g-float-right">
+        <div class="info-box__body">
+            <h2>Why should you learn the web?</h2>
+            <p>There’s an entire industry making things for the web, it’s growing by the year, it’s global, and it’s exciting. People out there right now are making Facebook and Instagram, and making the next things to follow in their place too.</p>
+
+            <p>A job in the web industry allows you the freedom to work wherever you want, do something different every day and there’s lots of exciting job opportunities for you to discover.</p>
+        </div>
+        <!-- /.info-box__body -->
+        <div class="info-box__cta">
+            <div class="media">
+                <div class="media__img">
+                    <div class="cta-info">
+                        <p><a href="#" class="btn">(re)start your career</a></p>
+                    </div>
+                    <!-- /.cta-info -->
+                </div>
+                <!-- /.media__img -->
+                <div class="media__body">
+                    <div class="cta-info">
+                        <p>14 week course</p>
+                        <p>Starts August 6<sup>th</sup> 2018</p>
+                    </div>
+                </div>
+                <!-- /.media__body -->
+            </div>
+            <!-- /.media -->
+        </div>
+        <!-- /.info-box__cta -->
+    </div>
+    <!-- /.g one-whole m-one-half -->
+</div>
+<!-- /.info-box info-box--why -->
+
+<div class="info-box info-box--promo">
+    <div class="info-box__body">
+        <h2>Introducing (re)start.</h2>
+        <p class="lede">(re)start is an accelerated 14-week course designed to teach you everything you need to know to get your first job in the web industry.</p>
+        <div class="feature">
+            <p>Job-focused and led by industry experts</p>
+        </div>
+        <!-- /.feature -->
+        <div class="feature">
+            <p>Experienced teachers with years of industry experience (and regular guest lecturers dropping in too)</p>
+        </div>
+        <!-- /.feature -->
+        <div class="feature">
+            <p>Project-based learning: learn through doing, not listening and reading</p>
+        </div>
+        <!-- /.feature -->
+    </div>
+    <!-- /.info-box__body -->
+    <div class="info-box__cta">
+        <div class="cta-info">
+            <p><a href="#" class="btn btn--alt btn--lrg">(re)start your career</a></p>
+        </div>
+        <!-- /.cta-info -->
+        <div class="cta-info cta-info--rev">
+            <p>14 week course</p>
+            <p>Starts August 6<sup>th</sup> 2018</p>
+        </div>
+        <!-- /.cta-info cta-info--rev -->
+    </div>
+    <!-- /.info-box__cta -->
+</div>
+<!-- /.info-box info-box--promo -->

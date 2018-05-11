@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
-  {%- include head.html -%}
-
-  <body>
-
-    {%- include header.html -%}
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- fonts -->
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7395052/7343992/css/fonts.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    <title>Learn the Web</title>
+</head>
+<body>
+    <div class="container">
         {{ content }}
-      </div>
-    </main>
-
-    {%- include footer.html -%}
-
-  </body>
-
+    </div>
+    <!-- /.container -->
+</body>
 </html>

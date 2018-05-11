@@ -1,0 +1,137 @@
+/*------------------------------------------------------------------
+[$PARTIAL-BASE]
+
+These are our base stuff. These reset things, clean stuff up and
+make text look nice.
+-------------------------------------------------------------------*/
+
+/*---------------------------------------
+[Body]
+/*--------------------------------------*/
+
+body {
+	font: 1em Helvetica, Arial, sans-serif;
+}
+
+/*---------------------------------------
+[Images]
+/*--------------------------------------*/
+
+a img {
+    border: 0;
+}
+
+/*---------------------------------------
+[Colours]
+/*--------------------------------------*/
+
+.success {
+    background: $success-colour !important;
+}
+
+.warning {
+    background: $warning-colour !important;
+}
+
+.error {
+    background: $error-colour !important;
+}
+
+.info {
+    background: $info-colour !important;
+}
+
+
+/*---------------------------------------
+[Helpers]
+/*--------------------------------------*/
+
+/* nicolasgallagher.com/micro-clearfix-hack */
+
+.cf
+{
+    zoom:1;
+
+    &:before,
+    &:after{
+        content:" ";
+        display:table;
+    }
+
+    &:after{
+        clear:both;
+    }
+}
+
+
+
+/*****************************************
+.media object
+******************************************/
+
+/**
+ * Place any image- and text-like content side-by-side, as per:
+ * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ * E.g.:
+ *
+   <div class="media">
+       <img src="http://placekitten.com/200/300" alt="" class"media-img">
+       <p class="media-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+   </div>
+ *
+ * Demo: jsfiddle.net/inuitcss/cf4Qs
+ *
+ */
+.media
+{
+    display:block;
+    @extend .cf;
+}
+    .media-img, .media__img
+    {
+        float:left;
+        margin-right: 1em;
+    }
+    /**
+     * Reversed image location (right instead of left).
+     */
+    .media-img-rev, .media__img--rev
+    {
+        float:right;
+        margin-left: 1em;
+    }
+
+        .media-img img,
+        .media-img-rev img,
+        .media__img--rev img
+        {
+            display:block;
+        }
+
+    .media-body, .media__body
+    {
+        overflow:hidden;
+    }
+        .media-body,
+        .media__body,
+        .media-body > :last-child,
+        .media__body > :last-child
+        {
+            margin-bottom:0;
+        }
+
+
+    /**
+     * `.img`s in `.islet`s need an appropriately sized margin.
+     */
+    .islet .media-img,
+    .islet .media__img
+    {
+        margin-right: .5em;
+    }
+    .islet .media-img-rev,
+    .islet .media__img--rev
+    {
+        margin-left: .5em;
+    }

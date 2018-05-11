@@ -1,0 +1,321 @@
+
+/*------------------------------------------------------------------
+
+Spacedoge - such pattern, much wow
+
+-------------------------------------------------------------------
+[Table of Contents]
+
+$Setup
+	Your first port of call.
+
+$Colours
+	Set up your site's colours.
+
+$Base
+	Body styles, basic link styles
+
+$Type
+	Web fonts, basic unclassed type styles
+
+$Abstractions
+	Reusable design chunks
+
+$Style_trumps
+	Helper classes, specifc 1-off styles,
+	error styles etc.
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[$Setup]
+
+Your first port of call. Includes all necessary files.
+-------------------------------------------------------------------*/
+
+$main-font-sizing-unit: em;
+
+$h1-size: 2;
+$h2-size: 1.6;
+$h3-size: 1.4;
+$h4-size: 1.2;
+$h5-size: 1;
+$h6-size: 1;
+
+$container-width: 960px; // Set to 100% for responsive stuff
+$grid-gutter: 20px;
+
+$success-colour: #dff0d8;
+$warning-colour: #fcf8e3;
+$error-colour: #f2dede;
+$info-colour: #d9edf7;
+
+// Import default styling
+@import "base/reset.scss";
+@import "base/base.scss";
+@import "base/helpers.scss";
+@import "base/breakpoints.scss";
+@import "base/type.scss";
+@import "base/tables.scss";
+@import "base/forms.scss";
+@import "base/grid.scss";
+
+/*------------------------------------------------------------------
+[$Colours]
+
+Set up your site's colours. I usually name space these to make
+them easier to find.
+
+e.g. $gd-red
+-------------------------------------------------------------------*/
+
+$gd-red: #a21418;
+
+$ltw-brand: #093c71;
+$ltw-highlight: #e8ff00;
+$ltw-body: #727272;
+
+
+/*------------------------------------------------------------------
+[$Base]
+
+Body styles, basic link styles
+-------------------------------------------------------------------*/
+
+body {
+    background-color: #fff;
+    @extend .gotham-book;
+}
+
+#site__logo {
+    max-width: 230px;
+    display: block;
+    margin-bottom: 80px;
+}
+
+.container {
+    width: auto;
+    max-width: 1246px;
+    background-color: #f3f3f3;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*------------------------------------------------------------------
+[$Type]
+
+Web fonts, basic unclassed type styles
+-------------------------------------------------------------------*/
+
+.gotham-book {
+    font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.gotham-medium {
+    font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.gotham-bold {
+    font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    @extend .gotham-medium;
+    color: $ltw-brand;
+}
+
+p {
+    @extend .gotham-book;
+    color: $ltw-body;
+}
+
+/*------------------------------------------------------------------
+[$Abstractions]
+
+Reusable design chunks
+-------------------------------------------------------------------*/
+
+.info-box {
+    padding: 80px;
+    overflow: hidden;
+}
+
+.info-box--intro {
+    background-color: $ltw-brand;
+
+    h1,h2,h3,h4,h5,h6,p,li {
+        color: #fff;
+    }
+    @include custom-breakpoint(950) {
+        background: $ltw-brand url(../img/header-bg-lrg.jpg) no-repeat;
+    }
+
+    @include is-hd-screen{
+        @include custom-breakpoint(950) {
+            background: $ltw-brand url(../img/header-bg-lrg@2x.jpg) no-repeat;
+            background-size: 100%;
+        }
+    }
+
+    .info-box__cta {
+        .cta-info {
+            p,li {
+                color: $ltw-highlight;
+            }
+        }
+    }
+}
+
+.info-box--why {
+    padding-bottom: 100px;
+    @include custom-breakpoint(950) {
+        background: url(../img/why-bg.jpg) no-repeat;
+    }
+
+    @include is-hd-screen{
+        @include custom-breakpoint(950) {
+            background: url(../img/why-bg@2x.jpg) no-repeat;
+            background-size: 100%;
+        }
+    }
+}
+
+.info-box--promo {
+    background-color: $ltw-brand;
+    text-align: center;
+    border-top: 2px solid $ltw-brand;
+    @include custom-breakpoint(950) {
+        background: url(../img/promo-bg.png) no-repeat;
+    }
+
+    @include is-hd-screen{
+        @include custom-breakpoint(950) {
+            background: url(../img/promo-bg@2x.png) no-repeat;
+            background-size: 100%;
+        }
+    }
+}
+
+.cta-info {
+    margin-bottom: 20px;
+    p,li {
+        margin-bottom: 0;
+        font-size: 0.8em;
+        text-transform: uppercase;
+        color: $ltw-brand;
+    }
+}
+
+.cta-info--rev {
+    p {
+        color: $ltw-highlight;
+    }
+}
+
+.info-box__announce {
+    font-size: 40px;
+    margin-bottom: 80px;
+    h1,h2,h3,h4,h5,h6,p,li {
+        @extend .gotham-medium;
+    }
+}
+
+.info-box__cta {
+    font-size: 1.2em;
+}
+
+.info-box__body {
+    padding-top: 40px;
+    margin-bottom: 40px;
+    h1,h2,h3,h4,h5,h6 {
+        font-size: 35px;
+
+        .info-box--promo & {
+            color: #fff;
+        }
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 150%;
+
+        .info-box--promo & {
+            color: #fff;
+        }
+    }
+}
+
+.feature {
+    color: #fff;
+    border-top: 1px solid #ccc;
+    width: 65%;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    p {
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
+}
+
+/*---------------------------------------------
+[$btn]
+
+Button class to make nice buttons
+
+<a class="btn" href="#" />
+----------------------------------------------*/
+
+.btn {
+	color: $ltw-brand;
+    border: 2px solid $ltw-brand;
+	padding: 15px;
+	line-height: 100%;
+	display: inline-block;
+
+	&:visited {
+		color: $ltw-brand;
+	}
+
+	&:hover {
+        color: #fff;
+		background: $ltw-brand;
+	}
+}
+
+.btn--alt {
+    border-color: $ltw-highlight;
+    color: $ltw-highlight;
+    @extend .gotham-medium;
+
+    &:hover {
+        background: darken($ltw-highlight, 30%);
+    }
+}
+
+.btn--lrg {
+    font-size: 1.3em;
+}
+
+/*---------------------------------------------
+// ENDS [btn]
+----------------------------------------------*/
+
+
+/*------------------------------------------------------------------
+[$Style_trumps]
+
+Helper classes, specifc 1-off styles, error styles etc.
+-------------------------------------------------------------------*/
+
+.lede {
+    font-size: 1.5em !important;
+    margin-bottom: 40px;
+}
