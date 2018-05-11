@@ -160,7 +160,7 @@ Reusable design chunks
     @include is-hd-screen{
         @include custom-breakpoint(950) {
             background: $ltw-brand url(../img/header-bg-lrg@2x.jpg) no-repeat;
-            background-size: 100%;
+            background-size: 1300px auto;
         }
     }
 
@@ -182,7 +182,7 @@ Reusable design chunks
     @include is-hd-screen{
         @include custom-breakpoint(950) {
             background: url(../img/why-bg@2x.jpg) no-repeat;
-            background-size: 100%;
+            background-size: 1322px auto;
         }
     }
 }
