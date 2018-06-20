@@ -73,6 +73,7 @@ $gd-red: #a21418;
 $ltw-brand: #093c71;
 $ltw-highlight: #e8ff00;
 $ltw-body: #727272;
+$ltw-brand-light: #0097CE;
 
 
 /*------------------------------------------------------------------
@@ -89,20 +90,32 @@ body {
 #site__logo {
     max-width: 230px;
     display: block;
-    margin-bottom: 30px;
-    @include breakpoint(m) {
-        margin-bottom: 80px;
-    }
+    margin-bottom: 70px;
 }
 
 .container {
     width: auto;
-    max-width: 1280px;
-    background-color: #f3f3f3;
+    max-width: 1200px;
+
+    @include custom-max-breakpoint(1200) {
+        padding: 0 5%;
+    }
+}
+
+.container--small {
+    max-width: 1000px;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
+    color: $ltw-brand-light;
+}
+
+.lede {
+    @include breakpoint(m) {
+        width: 60%;
+        margin: 0 auto;
+    }
 }
 
 /*------------------------------------------------------------------
@@ -155,17 +168,18 @@ Reusable design chunks
 
 .info-box--intro {
     background-color: $ltw-brand;
+    margin-bottom: 40px;
 
     h1,h2,h3,h4,h5,h6,p,li {
         color: #fff;
     }
     @include custom-breakpoint(950) {
-        background: $ltw-brand url(../img/header-bg-lrg.jpg) no-repeat;
+        background: $ltw-brand url(../img/header-bg-lrg.jpg) no-repeat right top;
     }
 
     @include is-hd-screen{
         @include custom-breakpoint(950) {
-            background: $ltw-brand url(../img/header-bg-lrg@2x.jpg) no-repeat;
+            background: $ltw-brand url(../img/header-bg-lrg@2x.jpg) no-repeat right top;
             background-size: 1300px auto;
         }
     }
@@ -199,16 +213,10 @@ Reusable design chunks
 .info-box--promo {
     background-color: $ltw-brand;
     text-align: center;
-    border-top: 2px solid $ltw-brand;
-    @include custom-breakpoint(950) {
-        background: url(../img/promo-bg.png) no-repeat;
-    }
 
-    @include is-hd-screen{
-        @include custom-breakpoint(950) {
-            background: url(../img/promo-bg@2x.png) no-repeat;
-            background-size: 100%;
-        }
+    .lede {
+        font-size: 22px;
+        margin-bottom: 20px;
     }
 }
 
@@ -275,9 +283,9 @@ Reusable design chunks
 
 .feature {
     color: #fff;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid darken($ltw-brand,10%);
     @include breakpoint(m) {
-        width: 65%;    
+        width: 45%;
     }
     margin: 0 auto;
     padding: 20px 0;
@@ -288,6 +296,244 @@ Reusable design chunks
     }
 }
 
+
+/*---------------------------------------------
+[$site__header]
+----------------------------------------------*/
+
+.site__header {
+
+}
+
+/*---------------------------------------------
+/ ENDS [$site__header]
+----------------------------------------------*/
+
+
+/*---------------------------------------------
+[$course-info]
+----------------------------------------------*/
+
+.course-info {
+    margin-bottom: 30px;
+}
+
+.course-info__detail {
+    color: $ltw-brand-light;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 0;
+
+    dt {
+    }
+
+    dd {
+        font-weight: bold;
+    }
+}
+
+/*---------------------------------------------
+// ENDS [course-info]
+----------------------------------------------*/
+
+
+/*---------------------------------------------
+[$island]
+Bordered content area
+----------------------------------------------*/
+
+.island {
+    border: 2px solid $ltw-brand;
+    text-align: center;
+    padding: 20px;
+
+    h1,h2,h3,h4,h5,h6,p,li {
+        color: $ltw-brand;
+    }
+}
+
+.island__title {
+    margin-bottom: 20px;
+}
+
+.island__body {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/*---------------------------------------------
+// ENDS [island]
+----------------------------------------------*/
+
+
+/*---------------------------------------------
+[$content-block]
+----------------------------------------------*/
+
+.content-block {
+    margin-bottom: 40px;
+
+    .content-block__title {
+        text-align: center;
+    }
+}
+
+.content-block--ltw-brand {
+    background-color: $ltw-brand;
+    text-align: center;
+    padding: 45px 0;
+    margin-bottom: 0;
+
+    .lede {
+        margin-bottom: 40px;
+    }
+
+    h1,h2,h3,h4,h5,h6,p,li {
+        color: #fff;
+    }
+
+    a {
+        color: #fff;
+    }
+}
+
+.content-block--projects {
+    background-color: $ltw-brand-light;
+    text-align: center;
+    padding: 45px 0;
+
+    .lede {
+        // margin-bottom: 40px;
+    }
+
+    h1,h2,h3,h4,h5,h6,p,li {
+        color: #fff;
+    }
+
+    a {
+        color: #fff;
+    }
+}
+
+.content-block--different {
+    .content-block__title {
+        margin-bottom: 50px;
+    }
+}
+
+.content-block__title {
+    h1,h2,h3,h4,h5,h6,p,li {
+        font-size: 35px;
+    }
+}
+
+.content-block__subtitle {
+    margin-bottom: 20px;
+    h1,h2,h3,h4,h5,h6,p,li {
+        color: $ltw-brand;
+        font-size: 25px;
+    }
+}
+
+.content-block__body {
+    p {
+        line-height: 165%;
+        margin-bottom: 20px;
+    }
+}
+
+/*---------------------------------------------
+// ENDS [content-block]
+----------------------------------------------*/
+
+
+/*---------------------------------------------
+[$fact]
+----------------------------------------------*/
+
+.fact {
+    background-color: $ltw-brand;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    position: relative;
+
+    @include breakpoint(m) {
+        width: 50%;
+        margin-left: auto;
+        margin-right: 0px;
+    }
+
+    h1,h2,h3,h4,h5,h6,p,li {
+        color: #fff;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.fact__no {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background-color: $ltw-brand;
+    border-radius: 50px;
+    padding: 10px 10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    p {
+        font-weight: bold;
+    }
+}
+
+.content-block--different {
+    .content-block__body {
+        .fact:nth-child(2n) {
+            @include breakpoint(m) {
+                margin-left: 0px;
+            }
+        }
+    }
+}
+
+/*---------------------------------------------
+// ENDS [fact]
+----------------------------------------------*/
+
+
+/*---------------------------------------------
+[$icons]
+----------------------------------------------*/
+
+.icons {
+    margin-bottom: 25px;
+    @include custom-breakpoint(1010) {
+        display: table;
+    }
+    margin-left: auto;
+    margin-right: auto;
+    li {
+        display: inline-block;
+        @include custom-breakpoint(1010) {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        padding: 4px 12px;
+    }
+}
+
+.icons__title {
+    @extend .gotham-medium;
+    text-transform: uppercase;
+}
+
+/*---------------------------------------------
+// ENDS [icons]
+----------------------------------------------*/
+
+
 /*---------------------------------------------
 [$btn]
 
@@ -297,11 +543,13 @@ Button class to make nice buttons
 ----------------------------------------------*/
 
 .btn {
-	color: $ltw-brand;
-    border: 2px solid $ltw-brand;
-	padding: 15px;
+	color: #fff;
+	padding: 15px 40px;
 	line-height: 100%;
 	display: inline-block;
+    border-radius: 30px;
+    background-color: $ltw-brand-light;
+    text-decoration: none;
 
 	&:visited {
 		color: $ltw-brand;
@@ -309,7 +557,7 @@ Button class to make nice buttons
 
 	&:hover {
         color: #fff;
-		background: $ltw-brand;
+		background: darken($ltw-brand,10%);
 	}
 }
 
@@ -327,6 +575,14 @@ Button class to make nice buttons
     font-size: 1.3em;
 }
 
+.btn--block {
+    display: block;
+    text-align: center;
+    @include max-breakpoint(m) {
+        margin-top: 30px;    
+    }
+}
+
 /*---------------------------------------------
 // ENDS [btn]
 ----------------------------------------------*/
@@ -338,7 +594,12 @@ Button class to make nice buttons
 Helper classes, specifc 1-off styles, error styles etc.
 -------------------------------------------------------------------*/
 
-.lede {
-    font-size: 1.5em !important;
-    margin-bottom: 40px;
+
+.social {
+    text-align: right;
+    margin-top: 20px;
+    li {
+        display: inline;
+        margin: 0 5px;
+    }
 }
