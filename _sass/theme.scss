@@ -84,12 +84,14 @@ Body styles, basic link styles
 
 body {
     background-color: #fff;
+
     @extend .gotham-book;
 }
 
 #site__logo {
-    max-width: 230px;
     display: block;
+
+    max-width: 230px;
     margin-bottom: 70px;
 }
 
@@ -108,6 +110,7 @@ body {
 
 a {
     text-decoration: underline;
+
     color: $ltw-brand-light;
 }
 
@@ -126,30 +129,32 @@ Web fonts, basic unclassed type styles
 
 .gotham-book {
     font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, Arial, sans-serif;
-    font-style: normal;
     font-weight: 400;
+    font-style: normal;
 }
 
 .gotham-medium {
     font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, Arial, sans-serif;
-    font-style: normal;
     font-weight: 500;
+    font-style: normal;
 }
 
 .gotham-bold {
     font-family: "Gotham SSm A", "Gotham SSm B", Helvetica, Arial, sans-serif;
-    font-style: normal;
     font-weight: 700;
+    font-style: normal;
 }
 
 h1,h2,h3,h4,h5,h6 {
-    @extend .gotham-medium;
     color: $ltw-brand;
+
+    @extend .gotham-medium;
 }
 
 p {
-    @extend .gotham-book;
     color: $ltw-body;
+
+    @extend .gotham-book;
 }
 
 /*------------------------------------------------------------------
@@ -159,29 +164,32 @@ Reusable design chunks
 -------------------------------------------------------------------*/
 
 .info-box {
+    overflow: hidden;
+
     padding: 5%;
+
     @include breakpoint(m) {
         padding: 80px;
     }
-    overflow: hidden;
 }
 
 .info-box--intro {
-    background-color: $ltw-brand;
     margin-bottom: 40px;
 
-    h1,h2,h3,h4,h5,h6,p,li {
-        color: #fff;
-    }
+    background-color: $ltw-brand;
+
     @include custom-breakpoint(950) {
         background: $ltw-brand url(../img/header-bg-lrg.jpg) no-repeat right top;
     }
-
     @include is-hd-screen{
         @include custom-breakpoint(950) {
             background: $ltw-brand url(../img/header-bg-lrg@2x.jpg) no-repeat right top;
             background-size: 1300px auto;
         }
+    }
+
+    h1,h2,h3,h4,h5,h6,p,li {
+        color: #fff;
     }
 
     .info-box__cta {
@@ -195,9 +203,11 @@ Reusable design chunks
 
 .info-box--why {
     padding-bottom: 50px;
+
     @include breakpoint(m) {
         padding-bottom: 100px;
     }
+
     @include custom-breakpoint(950) {
         background: url(../img/why-bg.jpg) no-repeat;
     }
@@ -211,12 +221,14 @@ Reusable design chunks
 }
 
 .info-box--promo {
-    background-color: $ltw-brand;
     text-align: center;
 
+    background-color: $ltw-brand;
+
     .lede {
-        font-size: 22px;
         margin-bottom: 20px;
+
+        font-size: 22px;
     }
 }
 
@@ -224,9 +236,12 @@ Reusable design chunks
     margin-bottom: 20px;
     p,li {
         margin-bottom: 0;
-        font-size: 0.8em;
+
         text-transform: uppercase;
+
         color: $ltw-brand;
+
+        font-size: 0.8em;
     }
 }
 
@@ -243,14 +258,18 @@ Reusable design chunks
 }
 
 .info-box__announce {
-    font-size: 30px;
     margin-bottom: 30px;
+
+    font-size: 30px;
+
     @include breakpoint(m) {
         font-size: 40px;
     }
+
     @include breakpoint(m) {
         margin-bottom: 80px;
     }
+
     h1,h2,h3,h4,h5,h6,p,li {
         @extend .gotham-medium;
     }
@@ -261,8 +280,9 @@ Reusable design chunks
 }
 
 .info-box__body {
-    padding-top: 40px;
     margin-bottom: 40px;
+    padding-top: 40px;
+
     h1,h2,h3,h4,h5,h6 {
         font-size: 35px;
 
@@ -282,17 +302,20 @@ Reusable design chunks
 }
 
 .feature {
-    color: #fff;
-    border-top: 1px solid darken($ltw-brand,10%);
-    @include breakpoint(m) {
-        width: 45%;
-    }
     margin: 0 auto;
     padding: 20px 0;
 
+    color: #fff;
+    border-top: 1px solid darken($ltw-brand,10%);
+
+    @include breakpoint(m) {
+        width: 45%;
+    }
+
     p {
-        font-size: 1.2em;
         margin-bottom: 0;
+
+        font-size: 1.2em;
     }
 }
 
@@ -319,13 +342,13 @@ Reusable design chunks
 }
 
 .course-info__detail {
-    color: $ltw-brand-light;
-    text-transform: uppercase;
-    font-size: 14px;
     margin-bottom: 0;
 
-    dt {
-    }
+    text-transform: uppercase;
+
+    color: $ltw-brand-light;
+
+    font-size: 14px;
 
     dd {
         font-weight: bold;
@@ -343,9 +366,11 @@ Bordered content area
 ----------------------------------------------*/
 
 .island {
-    border: 2px solid $ltw-brand;
-    text-align: center;
     padding: 20px;
+
+    text-align: center;
+
+    border: 2px solid $ltw-brand;
 
     h1,h2,h3,h4,h5,h6,p,li {
         color: $ltw-brand;
@@ -357,8 +382,9 @@ Bordered content area
 }
 
 .island__body {
-    font-size: 1.1em;
     margin-bottom: 20px;
+
+    font-size: 1.1em;
 }
 
 /*---------------------------------------------
@@ -379,10 +405,12 @@ Bordered content area
 }
 
 .content-block--ltw-brand {
-    background-color: $ltw-brand;
-    text-align: center;
-    padding: 45px 0;
     margin-bottom: 0;
+    padding: 45px 0;
+
+    text-align: center;
+
+    background-color: $ltw-brand;
 
     .lede {
         margin-bottom: 40px;
@@ -398,9 +426,11 @@ Bordered content area
 }
 
 .content-block--projects {
-    background-color: $ltw-brand-light;
-    text-align: center;
     padding: 45px 0;
+
+    text-align: center;
+
+    background-color: $ltw-brand-light;
 
     .lede {
         // margin-bottom: 40px;
@@ -431,6 +461,7 @@ Bordered content area
     margin-bottom: 20px;
     h1,h2,h3,h4,h5,h6,p,li {
         color: $ltw-brand;
+
         font-size: 25px;
     }
 }
@@ -452,16 +483,18 @@ Bordered content area
 ----------------------------------------------*/
 
 .fact {
-    background-color: $ltw-brand;
-    border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 30px;
     position: relative;
+
+    margin-bottom: 30px;
+    padding: 30px;
+
+    border-radius: 20px;
+    background-color: $ltw-brand;
 
     @include breakpoint(m) {
         width: 50%;
-        margin-left: auto;
         margin-right: 0px;
+        margin-left: auto;
     }
 
     h1,h2,h3,h4,h5,h6,p,li {
@@ -477,12 +510,16 @@ Bordered content area
     position: absolute;
     top: -10px;
     left: -10px;
-    background-color: $ltw-brand;
-    border-radius: 50px;
-    padding: 10px 10px;
+
     width: 20px;
     height: 20px;
+    padding: 10px 10px;
+
     text-align: center;
+
+    border-radius: 50px;
+    background-color: $ltw-brand;
+
     p {
         font-weight: bold;
     }
@@ -508,25 +545,31 @@ Bordered content area
 ----------------------------------------------*/
 
 .icons {
+    margin-right: auto;
     margin-bottom: 25px;
+    margin-left: auto;
+
     @include custom-breakpoint(1010) {
         display: table;
     }
-    margin-left: auto;
-    margin-right: auto;
+
     li {
         display: inline-block;
+
+        padding: 4px 12px;
+
         @include custom-breakpoint(1010) {
             display: table-cell;
+
             vertical-align: middle;
         }
-        padding: 4px 12px;
     }
 }
 
 .icons__title {
-    @extend .gotham-medium;
     text-transform: uppercase;
+
+    @extend .gotham-medium;
 }
 
 /*---------------------------------------------
@@ -543,13 +586,17 @@ Button class to make nice buttons
 ----------------------------------------------*/
 
 .btn {
-	color: #fff;
-	padding: 15px 40px;
-	line-height: 100%;
 	display: inline-block;
+
+	padding: 15px 40px;
+
+    text-decoration: none;
+
+	color: #fff;
     border-radius: 30px;
     background-color: $ltw-brand-light;
-    text-decoration: none;
+
+	line-height: 100%;
 
 	&:visited {
 		color: $ltw-brand;
@@ -562,12 +609,13 @@ Button class to make nice buttons
 }
 
 .btn--alt {
-    border-color: $ltw-highlight;
-    color: $ltw-highlight;
+    color: #fff;
+    background-color: $ltw-brand;
+
     @extend .gotham-medium;
 
     &:hover {
-        background: darken($ltw-highlight, 30%);
+        background: darken($ltw-brand, 10%);
     }
 }
 
@@ -577,9 +625,11 @@ Button class to make nice buttons
 
 .btn--block {
     display: block;
+
     text-align: center;
+
     @include max-breakpoint(m) {
-        margin-top: 30px;    
+        margin-top: 30px;
     }
 }
 
@@ -594,12 +644,14 @@ Button class to make nice buttons
 Helper classes, specifc 1-off styles, error styles etc.
 -------------------------------------------------------------------*/
 
-
 .social {
-    text-align: right;
     margin-top: 20px;
+
+    text-align: right;
+    
     li {
         display: inline;
+
         margin: 0 5px;
     }
 }
