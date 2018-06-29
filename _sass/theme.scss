@@ -75,6 +75,18 @@ $ltw-highlight: #e8ff00;
 $ltw-body: #727272;
 $ltw-brand-light: #0097CE;
 
+$primary: $ltw-brand;
+$secondary: $ltw-highlight;
+$info: #f49c20;
+$warning: $ltw-highlight;
+$success: #00a176;
+$danger: #ea2727;
+$dark: darken($ltw-brand,10%);
+$light: $ltw-brand-light;
+
+@import "bootstrap/bootstrap-grid.scss";
+@import "bootstrap/bootstrap-reboot.scss";
+@import "bootstrap/bootstrap.scss";
 
 /*------------------------------------------------------------------
 [$Base]
@@ -228,12 +240,13 @@ Reusable design chunks
     .lede {
         margin-bottom: 20px;
 
-        font-size: 22px;
+        font-size: 1.5rem;
     }
 }
 
 .cta-info {
     margin-bottom: 20px;
+
     p,li {
         margin-bottom: 0;
 
@@ -241,7 +254,7 @@ Reusable design chunks
 
         color: $ltw-brand;
 
-        font-size: 0.8em;
+        font-size: 0.8rem;
     }
 }
 
@@ -260,10 +273,10 @@ Reusable design chunks
 .info-box__announce {
     margin-bottom: 30px;
 
-    font-size: 30px;
+    font-size: 2rem;
 
     @include breakpoint(m) {
-        font-size: 40px;
+        font-size: 2.3rem;
     }
 
     @include breakpoint(m) {
@@ -276,7 +289,7 @@ Reusable design chunks
 }
 
 .info-box__cta {
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
 .info-box__body {
@@ -284,7 +297,7 @@ Reusable design chunks
     padding-top: 40px;
 
     h1,h2,h3,h4,h5,h6 {
-        font-size: 35px;
+        font-size: 1.8rem;
 
         .info-box--promo & {
             color: #fff;
@@ -292,7 +305,7 @@ Reusable design chunks
     }
 
     p {
-        font-size: 18px;
+        font-size: 1.2rem;
         line-height: 150%;
 
         .info-box--promo & {
@@ -315,7 +328,7 @@ Reusable design chunks
     p {
         margin-bottom: 0;
 
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
 }
 
@@ -338,7 +351,7 @@ Reusable design chunks
 ----------------------------------------------*/
 
 .course-info {
-    margin-bottom: 30px;
+
 }
 
 .course-info__detail {
@@ -348,15 +361,53 @@ Reusable design chunks
 
     color: $ltw-brand-light;
 
-    font-size: 14px;
-
-    dd {
-        font-weight: bold;
-    }
+    font-size: 0.8rem;
 }
 
 /*---------------------------------------------
 // ENDS [course-info]
+----------------------------------------------*/
+
+/*---------------------------------------------
+[$list-group]
+----------------------------------------------*/
+
+.list-group {
+
+}
+
+.list-group-item {
+    text-decoration: none;
+
+    color: #fff;
+    border-width: 2px;
+    border-color: #fff;
+    border-bottom-width: 0;
+    background-color: transparent;
+
+    &.active {
+        border-color: #fff;
+        border-bottom-width: 1px;
+    }
+
+    &:first-child {
+        border-top-left-radius: 0.75rem;
+        border-top-right-radius: 0.75rem;
+    }
+
+    &:last-child {
+        border-bottom-width: 2px;
+        border-bottom-right-radius: 0.75rem;
+        border-bottom-left-radius: 0.75rem;
+    }
+}
+
+.tab-content {
+    text-align: left;
+}
+
+/*---------------------------------------------
+// ENDS [list-group]
 ----------------------------------------------*/
 
 
@@ -384,7 +435,7 @@ Bordered content area
 .island__body {
     margin-bottom: 20px;
 
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
 /*---------------------------------------------
@@ -397,8 +448,6 @@ Bordered content area
 ----------------------------------------------*/
 
 .content-block {
-    margin-bottom: 40px;
-
     .content-block__title {
         text-align: center;
     }
@@ -432,15 +481,7 @@ Bordered content area
 
     background-color: $ltw-brand-light;
 
-    .lede {
-        // margin-bottom: 40px;
-    }
-
     h1,h2,h3,h4,h5,h6,p,li {
-        color: #fff;
-    }
-
-    a {
         color: #fff;
     }
 }
@@ -453,28 +494,71 @@ Bordered content area
 
 .content-block__title {
     h1,h2,h3,h4,h5,h6,p,li {
-        font-size: 35px;
+        font-size: 1.8rem;
     }
 }
 
 .content-block__subtitle {
     margin-bottom: 20px;
+
     h1,h2,h3,h4,h5,h6,p,li {
         color: $ltw-brand;
 
-        font-size: 25px;
+        font-size: 1.5rem;
+        line-height: 145%;
     }
 }
 
 .content-block__body {
     p {
         line-height: 165%;
-        margin-bottom: 20px;
+        margin-bottom: 1rem;
     }
 }
 
 /*---------------------------------------------
 // ENDS [content-block]
+----------------------------------------------*/
+
+
+/*---------------------------------------------
+[$projects]
+----------------------------------------------*/
+
+.projects {
+
+}
+
+.project {
+    padding: 20px;
+
+    text-align: left;
+
+    border-radius: 10px;
+    background: $primary;
+
+    .small {
+        margin-bottom: 0.5rem;
+
+        text-transform: uppercase;
+    }
+}
+
+.project__body {
+    margin-bottom: 20px;
+    p {
+        line-height: 175%;
+    }
+}
+
+.project__meta {
+    .icons {
+        margin-left: 0;
+    }
+}
+
+/*---------------------------------------------
+// ENDS [projects]
 ----------------------------------------------*/
 
 
@@ -566,6 +650,13 @@ Bordered content area
     }
 }
 
+.icons--flexible {
+    display: block;
+    li {
+        display: inline-block;
+    }
+}
+
 .icons__title {
     text-transform: uppercase;
 
@@ -586,24 +677,19 @@ Button class to make nice buttons
 ----------------------------------------------*/
 
 .btn {
-	display: inline-block;
-
-	padding: 15px 40px;
+    padding: 15px 20px;
 
     text-decoration: none;
 
-	color: #fff;
     border-radius: 30px;
-    background-color: $ltw-brand-light;
 
 	line-height: 100%;
 
-	&:visited {
-		color: $ltw-brand;
-	}
+    @include media-breakpoint-down(sm) {
+    	padding: 15px 40px;
+    }
 
 	&:hover {
-        color: #fff;
 		background: darken($ltw-brand,10%);
 	}
 }
@@ -616,11 +702,12 @@ Button class to make nice buttons
 
     &:hover {
         background: darken($ltw-brand, 10%);
+        color: #fff;
     }
 }
 
 .btn--lrg {
-    font-size: 1.3em;
+    font-size: 1.3rem;
 }
 
 .btn--block {
@@ -628,7 +715,7 @@ Button class to make nice buttons
 
     text-align: center;
 
-    @include max-breakpoint(m) {
+    @include media-breakpoint-down(sm) {
         margin-top: 30px;
     }
 }
@@ -648,7 +735,7 @@ Helper classes, specifc 1-off styles, error styles etc.
     margin-top: 20px;
 
     text-align: right;
-    
+
     li {
         display: inline;
 
